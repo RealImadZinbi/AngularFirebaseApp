@@ -1,0 +1,29 @@
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
+<div class="d-flex justify-content-center">
+    <h1><strong>Mes rendez vous programmés</strong></h1>
+</div>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+            <th scope="col">Nom Complet du patient</th>
+            <th scope="col">Téléphone du patient</th>
+            <th scope="rol">Jour du rendez vous</th>
+            <th scope="rol">Heure du rendez vous</th>
+            <th>Etat actuel</th>
+            <th>Décision</th>
+
+</tr>
+            </thead>
+            <tbody>
+                <tr scope="row" *ngFor=" let p of patient">
+                    <td>{{p.nom}}</td>
+                    <td>{{p.Telephone}}</td>
+                    <td>{{p.jour}}</td>
+                    <td>{{p.creneau}}</td>
+                    <td>{{p.etat}}</td>
+
+                    <td><button mat-raised-button (click)="decisionRdv('Refusé',p)" color="warn"><mat-icon>remove</mat-icon>Rejeter</button>
+                   <button mat-raised-button (click)="decisionRdv('Accepté',p)" color="accent"><mat-icon>add</mat-icon>Accepter</button></td>
+                </tr>
+            </tbody>
+    </table>

@@ -1,0 +1,11 @@
+{
+    "/api/*": {
+        "target": "http://165a5bb7.ngrok.io/diagnosis",
+        "secure": false,
+        "changeOrigin": true,
+        "pathRewrite": {
+            "^/api": ""
+          }
+
+    }
+}   

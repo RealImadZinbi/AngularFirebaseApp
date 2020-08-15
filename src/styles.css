@@ -1,0 +1,85 @@
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+body {
+    margin: 0;
+}
+
+.spacer {
+    flex-grow: 1;
+}
+
+
+.medium-list {
+    margin: auto;
+    width: 600px;
+    padding: 10px;
+    text-align: justify
+  }
+     
+  .list-viewer-wrapper {
+    border: 1px solid rgba(0, 0, 0, .03);
+    box-shadow: 0 2px 2px rgba(0, 0, 0, .24), 0 0 2px rgba(0, 0, 0, .12);
+    margin: 4px;
+  }
+  
+  .list-header-title {
+    color: rgba(0, 0, 0, .54);
+    background: rgba(0, 0, 0, .03);
+    padding: 8px 20px;
+    font-weight: bold;
+  }
+  
+  .form-container {
+    display: flex;
+    flex-direction: column;
+  }
+ 
+  .divider {
+    margin-top: 10px !important; 
+  }
+ 
+
+
+
+mat-form-field.mat-form-field {
+  font-size: 12px;
+  left: 26%;
+  margin-top: 5px 
+
+}
+.example-h2 {
+  margin: 10px;
+}
+
+.example-section {
+  display: flex;
+  align-content: center;
+  align-items: center;
+  height: 60px;
+}
+
+.example-margin {
+  margin: 0 10px;
+}
+.app {
+  background: #fffbd5; /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #fffbd5, #b20a2c); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #fffbd5, #b20a2c);
+}
+
+example-card {
+  max-width: 400px;
+}
+
+.example-header-image {
+  background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+  background-size: cover;
+}
+.relative {
+  position: relative;
+  left: 30px;
+  top: 80px;
+}
+.body {
+  background-image: url('https://image.freepik.com/free-vector/vector-coronavirus-2019-ncov-virus-background-with-disease-cells-covid-19-corona-virus-outbreaking-pandemic-medical-health-risk-concept_139523-193.jpg')
+}

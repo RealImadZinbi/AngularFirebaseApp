@@ -1,0 +1,11 @@
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
+
+<div *ngIf="auth.users$ | async as user; else login">
+      {{ user | json}}
+      <hr>
+      <button class="button" (click)="auth.signOut()">Sign out</button>
+</div>
+
+
+
+  

@@ -1,0 +1,39 @@
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
+<div class ="medium-list">
+  <div class="relative">
+  <mat-card>
+    <mat-card-title>Trouvez votre médecin et prenez rendez-vous
+    </mat-card-title>
+    </mat-card>
+  </div>
+    <form [formGroup]="registerForm" (ngSubmit)="registerForm.valid && onRegisterSubmit()" novalidate>
+<mat-grid-list  row="1" cols="3" rowHeight="1:2">
+  <mat-grid-tile>
+    <mat-form-field appearance="fill">
+      <mat-label>Choisir une spécialité</mat-label>
+      <mat-select >
+        <mat-option>None</mat-option>
+        <mat-option value="option1">Cardiologie</mat-option>
+        <mat-option value="option2">Pédiatrie</mat-option>
+        <mat-option value="option3">Médecine dentaire</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </mat-grid-tile>
+  <mat-grid-tile>
+    <mat-form-field appearance="fill">
+        <mat-label>Choisir une ville</mat-label>
+        <mat-select >
+          <mat-option>None</mat-option>
+          <mat-option value="option1">Casablanca</mat-option>
+          <mat-option value="option2">Rabat</mat-option>
+          <mat-option value="option3">Salé</mat-option>
+        </mat-select>
+      </mat-form-field>
+  </mat-grid-tile>
+  <mat-grid-tile>    <button mat-raised-button color="warn"  style="margin-top: -8px;"><mat-icon>search</mat-icon>Rechercher</button>
+  </mat-grid-tile>
+</mat-grid-list>
+
+</form>
+
+</div>

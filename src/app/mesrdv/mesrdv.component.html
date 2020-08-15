@@ -1,0 +1,34 @@
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
+
+
+    <div class="d-flex justify-content-center">
+<h1>Mes rendez vous</h1>
+</div>
+<table class="table table-striped">
+    
+    <thead>
+        <tr>
+            <th scope="col">Nom complet du docteur</th>
+            <th scope="col">Spécialité</th>
+            <th scope="col">Tarif de la visite</th>
+            <th scope="col">Numéro de Téléphone</th>
+            <th scope="col">Jour du rendez vous</th>
+            <th scope="col">Créneau</th>
+            <th scope="col">Réponse du Médecin</th>
+            <th scope="col">Annuler le rendez vous</th>
+        </tr>
+
+    </thead>
+    <tbody>
+        <tr scope="row" *ngFor="let r of rdv">
+        <td>{{ r.nomDocteur }}</td>
+        <td>{{r.Speciality}}</td>
+        <td>{{r.Tarif}} Dirhams</td>
+        <td>{{r.Telephone}} </td>
+        <td>{{r.Jour}}</td>
+        <td>{{r.creneau}}</td>
+        <td>{{r.etat}}</td>
+        <th><button mat-raised-button color="accent" (click)="CancelRdv(r)"><mat-icon>clear</mat-icon>Annuler</button></th>
+        </tr>
+    </tbody>
+</table>

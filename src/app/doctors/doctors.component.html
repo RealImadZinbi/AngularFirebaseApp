@@ -1,0 +1,28 @@
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
+
+
+    <div class="d-flex justify-content-center">
+    <button mat-raised-button color="primary" routerLink='/Doctor'>Ajouter un nouveau médecin</button>
+</div>
+
+<table class="table">
+    <thead>
+        <th>Nom complet</th>
+        <th>Spécialité</th>
+        <th>Téléphone</th>  
+        <th>Actions</th>
+</thead>    
+<tbody>
+    <tr *ngFor="let d of doctor">
+        <td>{{ d.nom }}</td>
+        <td>{{ d.Speciality }}</td>
+        <td>{{ d.Telephone }}</td>
+        <td>
+            <button mat-raised-button color="primary" (click)="editDoctor($event,d) ; openDialog() ;sendData(d)">Modifier<mat-icon>edit</mat-icon></button>
+            <button mat-raised-button color="accent" (click)="deleteDoc(d)">Delete<mat-icon>delete</mat-icon>
+            </button>
+</td>
+        
+</tr>
+</tbody>
+</table>    

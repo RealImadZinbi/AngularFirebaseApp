@@ -1,0 +1,19 @@
+<div *ngIf="doctor.nom" class="card" style="width: 23rem;">  
+    <img *ngIf="doctor.imageUrl" class="card-img-top" [src]="doctor.imageUrl" alt="{{ doctor.nom }}">
+    <div class="card-body">
+      <h5 class="card-title">{{doctor.nom}}</h5>
+      <h6 class="card-subtitle mb-2 text-muted">
+      <tr><strong>Spécialité:</strong> {{doctor.Speciality}}</tr>
+      <tr><strong>Adresse:</strong> {{doctor.Adresse}}</tr>
+
+    <tr><strong>Numéro de Téléphone:</strong> {{doctor.Telephone}}</tr>
+    <tr><strong>Tarif de la visite:</strong> {{doctor.Tarif}} Dhs</tr>
+
+    </h6> 
+      <div class="card-footer">
+      <button mat-raised-button   
+       color="primary"  
+      class="btn btn-primary btn-block" (click)= "openDialog() ;sendData(doctor)" >Prendre un rendez vous</button>
+      </div>
+</div>
+</div>

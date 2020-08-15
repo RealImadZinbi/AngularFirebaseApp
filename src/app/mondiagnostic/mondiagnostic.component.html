@@ -1,0 +1,16 @@
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
+<div *ngIf="text">
+    <div class="d-flex justify-content-center">
+
+<h2   mat-dialog-title>Votre diagnostique est prêt !</h2>
+</div>
+<mat-dialog-content (ngModel)="text">
+    <p>{{text}}</p>
+
+</mat-dialog-content>
+<div class="d-flex justify-content-center">
+
+<mat-dialog-actions>
+    <button mat-raised-button color="primary" (click)="close()">Consulter</button>
+</mat-dialog-actions>
+</div>

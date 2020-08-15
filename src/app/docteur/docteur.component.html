@@ -1,0 +1,105 @@
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
+<div class="container">
+
+<div class="row align-items-center" style="height: 92vh">
+
+    <div  class="col-md-12">
+
+        <div class="d-flex justify-content-center">
+            <div class="card">
+                <div class="card-body">
+
+                    <h3 class="card-title"><strong>Saissisez vos informations</strong></h3>
+
+        <form #f="ngForm" (ngSubmit)="save(f.value) ; authenticationDoctorService.SignUp(userEmail.value, userPassword.value) ; sendData('doctor')" novalidate>
+                
+            <div class="form-group">
+                <div class="d-flex flex-row bd-highlight mb-3">
+
+                <div class="p-2 bd-highlight"><mat-icon>alternate_email</mat-icon></div>
+                 <div class="p-2 bd-highlight"><input #email="ngModel" ngModel name="email" type="text" class="form-control" placeholder="Email" #userEmail required name="email"></div>
+                 <div class="alert alert-danger" *ngIf="email.touched && email.invalid">Veuillez saisir une adresse email</div>     
+            </div>
+            </div>
+            <div class="form-group">
+                <div class="d-flex flex-row bd-highlight mb-3">
+                    <div class="p-2 bd-highlight"><mat-icon>lock</mat-icon></div>
+                    <div class="p-2 bd-highlight"> <input #password="ngModel" ngModel type="password" id="password" class="form-control" placeholder="Password" name="password" #userPassword required>  </div>
+                    <div class="alert alert-danger" *ngif="password.touched && password.invalid ">Saisissez un mot de passe</div>
+            </div>
+            </div>
+    <div class="form-group">
+        <div class="d-flex flex-row bd-highlight mb-3">
+            <div class="p-2 bd-highlight"><mat-icon>account_circle</mat-icon></div>
+            <div class="p-2 bd-highlight"><input #nom="ngModel" ngModel name="nom" id="nom" placeholder="Nom Complet" type="text" class="form-control" required></div>
+        <div class="alert alert-danger" *ngIf="nom.touched && nom.invalid">Le nom est nécéssaire
+        </div>
+        </div>
+        
+    </div>
+    <div class="form-group">
+        <div class="d-flex flex-row bd-highlight mb-3">
+        <div class="p-2 bd-highlight"><mat-icon>phone</mat-icon></div>
+        <div class="p-2 bd-highlight">
+        <input #Telephone="ngModel" ngModel name="Telephone" placeholder="Numéro de téléphone" id="Telephone" type="text" class="form-control">
+        <div class="alert alert-danger" *ngIf="Telephone.touched && Telephone.invalid">Veuillez précisiez votre spécialité médicale
+            </div>
+            </div>
+</div>
+    </div>
+    <div class="form-group">
+        <div class="d-flex flex-row bd-highlight mb-3">
+            <div class="p-2 bd-highlight"><mat-icon>local_hospital</mat-icon></div>
+            <div class="p-2 bd-highlight">
+
+        <input #Adresse="ngModel" ngModel name="Adresse" id="Adresse" placeholder="Adresse" type="text" class="form-control">
+        <div class="alert alert-danger" *ngIf="Adresse.touched && Adresse.invalid">Veuillez précisiez votre spécialité médicale
+</div>
+</div>
+</div>
+    </div>
+    <div class="form-group">
+        <div class="input-group mb-3">  <div class="input-group-prepend">
+            <span class="input-group-text">MAD</span></div>
+        <input #Tarif="ngModel" placeholder="Tarif d'une visite" ngModel name="Tarif" id="Tarif" type="text" class="form-control">
+        <div class="alert alert-danger" *ngIf="Tarif.touched && Tarif.invalid">Veuillez précisez le tarif d'une visite
+</div>
+    </div>
+    </div>
+    <div class="form-group">
+        
+        <label for='Speciality'>Specialite</label>
+        <div class="d-flex flex-row bd-highlight mb-3">
+            <div class="p-2 bd-highlight"><mat-icon>work</mat-icon></div>
+            <div class="p-2 bd-highlight">
+
+        <select #Speciality="ngModel" ngModel name="Speciality" id="Speciality "type="text" class="form-control" required>
+            <option *ngFor="let s of specialities$ | async" >
+                {{s.name}}
+
+            </option>
+        </select>
+        <div class="alert alert-danger" *ngIf="Speciality.touched && Speciality.invalid">Veuillez précisiez votre spécialité médicale
+        </div>
+        </div>
+        </div>
+
+</div>
+    <div class="form-group">
+        <div class="d-flex flex-row bd-highlight mb-3">
+            <div class="p-2 bd-highlight"><mat-icon>portrait</mat-icon></div>
+            <div class="p-2 bd-highlight">
+
+
+        <input #imageUrl="ngModel" ngModel placeholder="Saisissez votre photo sous forme d'url" name="imageUrl" id="imageUrl" type="text" class="form-control">
+        <div class="alert alert-danger" *ngIf="imageUrl.touched && imageUrl.invalid">Insérez votre photo
+        </div>
+    </div>
+    </div>
+    </div>
+    <button  mat-raised-button color="primary"  style="margin-left: 50px" >Confirmer l'inscription</button>
+    </form>
+    </div>
+    </div>
+   
+</div>

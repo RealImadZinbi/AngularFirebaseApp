@@ -1,0 +1,96 @@
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
+    <br><br><br><br><br><br>
+    <div class="d-flex justify-content-center">
+
+  <div class="row h-100">
+    <mat-card>
+
+        <div class="col-sm-12 my-auto">
+            <mat-card-title>
+                <div class="d-flex justify-content-center">
+
+                Votre diagnostique en ligne
+                </div>
+            </mat-card-title>   
+            <mat-card-subtitle>
+                <div class="d-flex justify-content-center">
+                Diagnostique rapide
+                </div>
+            </mat-card-subtitle>
+            <mat-card-content>	
+                <h2><strong>Veuillez choisir quatre symptomes que vous ressentez le plus parmis ceux présentés çi dessous</strong></h2>
+                </mat-card-content>
+                <mat-card-footer>	
+                    
+                            </mat-card-footer>
+        <div class="d-flex justify-content-center">
+            <div class="d-flex flex-column bd-highlight mb-3">
+            <div  class="p-2 bd-highlight"></div>
+            <div   *ngFor="let symptom of symptomes">
+                <div *ngIf="symptom.count<10">
+   <mat-slide-toggle  [(ngModel)]="symptom.checked"  [formControl]="autoRenew"  
+   
+     class="example-margin"
+    color="primary"
+    >{{symptom.name}}
+    </mat-slide-toggle>
+
+    </div>
+
+</div>   
+</div>
+
+       
+<div class="col align-self-center">
+
+<div class="d-flex justify-content-center">
+                    <div class="d-flex flex-column bd-highlight mb-3">
+                    <div  class="p-2 bd-highlight"></div>
+                    <div   *ngFor="let symptom of symptomes">
+                        <div *ngIf="symptom.count<18 && symptom.count>9">
+           <mat-slide-toggle  [(ngModel)]="symptom.checked"  [formControl]="autoRenew"  
+           
+             class="example-margin"
+            color="primary"
+            >{{symptom.name}}
+            </mat-slide-toggle>
+           
+            </div>
+            
+       </div>
+        </div>
+        </div>
+    </div>
+   
+    <div class="col align-self-center">
+        <div class="d-flex justify-content-center">
+            <div class="d-flex flex-column bd-highlight mb-3">
+            <div  class="p-2 bd-highlight"></div>
+            <div   *ngFor="let symptom of symptomes">
+                <div *ngIf="symptom.count<28 && symptom.count>18">
+   <mat-slide-toggle  [(ngModel)]="symptom.checked"  [formControl]="autoRenew"  
+   
+     class="example-margin"
+    color="primary"
+    >{{symptom.name}}
+    </mat-slide-toggle>
+   
+    </div>      </div>
+
+
+                       </div>
+                
+                       
+ 
+    </div>
+    
+      </div>
+    
+ </div>
+ <mat-card-actions>
+    <div class="d-flex justify-content-center">
+
+    <button (click)="sendToserver() ; openDialog()"  mat-fab color="primary" >  <mat-icon>done</mat-icon>
+    </button>
+    </div>
+      </mat-card-actions>

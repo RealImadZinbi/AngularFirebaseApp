@@ -1,0 +1,51 @@
+
+<mat-toolbar color="primary" class="mat-elevation-z6">
+  <span><mat-icon>local_hospital </mat-icon>HealthCare</span>
+
+  <div class="spacer"></div>
+
+  <ng-template #anonymouseUser>
+    <button mat-button [matMenuTriggerFor]="appMenu"> Je suis un Patient <mat-icon>accessibility</mat-icon></button>
+
+    <mat-menu #appMenu="matMenu" xPosition="before">
+      <button mat-menu-item routerLink="Registration"><mat-icon>assignment</mat-icon>S'enregistrer</button>
+      <button mat-menu-item routerLink="Signup"><mat-icon>account_circle</mat-icon>Se connecter</button>
+    </mat-menu>
+    <button mat-button [matMenuTriggerFor]="AppMenu" >Je suis un Médecin <mat-icon>local_hospital</mat-icon></button>
+
+    <mat-menu #AppMenu="matMenu" xPosition="before">
+      <button mat-menu-item routerLink="Doctor" ><mat-icon>assignment</mat-icon>S'enregistrer</button>
+      <button mat-menu-item routerLink="Signp" ><mat-icon>account_circle</mat-icon>Se connecter</button>
+    </mat-menu>
+    <button mat-button [matMenuTriggerFor]="ApMenu" >Je suis un Administrateur <mat-icon>computer</mat-icon></button>
+    <mat-menu #ApMenu="matMenu" xPosition="before">
+      <button mat-menu-item routerLink="Admin" ><mat-icon>account_circle</mat-icon>Se connecter</button>
+    </mat-menu>
+  
+    
+
+
+        
+</ng-template>
+
+  <button *ngIf="user$ | async as user; else anonymouseUser"  mat-button [matMenuTriggerFor]="menu"  >{{user.displayName ||  user.email}} <mat-icon>person</mat-icon></button>
+<mat-menu #menu="matMenu" xPosition="before">
+  <button  *ngIf="isDoctor=='patient'" mat-menu-item routerLink="Mesrdv" ><mat-icon>perm_contact_calendar</mat-icon>Mes rendez-vous</button>
+<button *ngIf="isDoctor=='patient'" mat-menu-item routerLink="Alldoctors" ><mat-icon>local_hospital</mat-icon>Programmer un rendez vous</button>
+
+  <button  *ngIf="isDoctor=='patient'" mat-menu-item routerLink="diagnostic"><mat-icon>favorite</mat-icon>Diagnostic</button>
+  <button  *ngIf="isDoctor=='doctor'" mat-menu-item routerLink="Mespatients" ><mat-icon>perm_contact_calendar</mat-icon>Gestion des rendez-vous</button>
+  <button  *ngIf="isDoctor=='admin'" mat-menu-item routerLink="Doctors" ><mat-icon>edit</mat-icon>Gestion des docteurs</button>
+  <button  *ngIf="isDoctor=='admin'" mat-menu-item routerLink="addDoctor" ><mat-icon>add</mat-icon>Ajouter un docteur</button>
+
+  <button  mat-menu-item (click)="logout()" ><mat-icon>settings_power</mat-icon>Se déconnecter</button>
+
+</mat-menu>
+
+
+  <div class="center"></div>
+
+
+</mat-toolbar>
+
+

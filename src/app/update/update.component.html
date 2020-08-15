@@ -1,0 +1,49 @@
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
+<h2 mat-dialog-title>Mettre à jour les informations du medecins </h2>
+
+<div class="row">
+    <div  class="col-md-6">
+        <form #f="ngForm" (ngSubmit)="updateDoctor(docteur)" novalidate>
+    <div class="form-group">
+        <label for='nom'>Nom complet</label>
+        <input #nom="ngModel" [(ngModel)]="docteur.nom" name="nom" id="nom" type="text" class="form-control" required>
+        <div class="alert alert-danger" *ngIf="nom.touched && nom.invalid">Le nom est nécéssaire
+        </div>
+    </div>
+    <div class="form-group">
+        <label for='Telephone'>Telephone</label>
+        <input #Telephone="ngModel" [(ngModel)]="docteur.Telephone" name="Telephone" id="Telephone" type="text" class="form-control">
+        <div class="alert alert-danger" *ngIf="Telephone.touched && Telephone.invalid">Veuillez précisiez votre spécialité médicale
+</div>
+    </div>
+    <div class="form-group">
+        <label for='Email'>Telephone</label>
+        <input #email="ngModel" [(ngModel)]="docteur.email" name="email" id="email" type="text" class="form-control">
+        <div class="alert alert-danger" *ngIf="email.touched && email.invalid">Veuillez précisiez votre spécialité email
+</div>
+    </div>
+   
+    <div class="form-group">
+        <label for="imageUrl">Image Url</label>
+        <input #imageUrl="ngModel" [(ngModel)]="docteur.imageUrl" name="imageUrl" id="imageUrl" type="text" class="form-control">
+        <div class="alert alert-danger" *ngIf="imageUrl.touched && imageUrl.invalid">Insérez votre photo
+        </div>
+    </div>
+    <button mat-dialog-close mat-raised-button color="accent" class="btn btn-primary" type="submit">Mettre à jour</button>
+    </form>
+    </div>
+    <div  class="col-md-6">
+        <div class="card" style="width: 18rem;">
+            <img [src]="imageUrl.value" class="card-img-top">
+            <div class="card-body">
+              <h5 class="card-title">
+                  <td>{{nom.value}}</h5>
+              <p class="card-text" >
+                  <tr>{{Telephone.value}}</tr>
+                  <tr>{{Speciality.value}}</tr>   
+                </p>
+              <a href="#" class="btn btn-primary">Contacter</a>
+            </div>
+          </div>
+</div>
+</div>

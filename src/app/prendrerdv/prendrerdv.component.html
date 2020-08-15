@@ -1,0 +1,52 @@
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
+<h2  [(ngModel)]="docteur.nom" mat-dialog-title>Prenez rendez vous avec Docteur {{ docteur.nom }}</h2>
+<div class="row">
+    <div  class="col-md-12">
+        <div class="d-flex justify-content-center">
+
+        <form #f="ngForm" (ngSubmit)="addToCard(docteur,f.value)" novalidate>
+    <div class="form-group">
+        <label for='nom'>Nom complet du patient :</label>
+        <input #nom="ngModel" ngModel name="nom" id="nom" type="text" class="form-control" required>
+        <div class="alert alert-danger" *ngIf="nom.touched && nom.invalid">Le nom et le prénom sont nécéssaire
+        </div>
+    </div>
+    <div class="form-group">
+        <label for='Telephone'>Numéro de telephone:</label>
+        <input #Telephone="ngModel" ngModel name="Telephone" id="Telephone" type="text" class="form-control">
+        <div class="alert alert-danger" *ngIf="Telephone.touched && Telephone.invalid">Veuillez précisiez votre spécialité médicale
+</div>
+   
+    </div>
+    
+    <div class="form-group">
+        <label for='Adresse'>Adresse :</label>
+        <input #Adresse="ngModel" ngModel name="Adresse" id="Adresse" type="text" class="form-control">
+        <div class="alert alert-danger" *ngIf="Adresse.touched && Adresse.invalid">Veuillez précisiez votre adresse actuelle
+</div>
+    </div>
+    <div class="form-group">
+        <label for='jour'>Jour du rendez vous :</label>
+        <input #jour="ngModel" [(ngModel)]="docteur.Jour" name="jour" id="jour" type="date" class="form-control">
+        <div class="alert alert-danger" *ngIf="jour.touched && jour.invalid">Veuillez précisiez le jour de votre rendez vous
+</div>
+    </div>
+    <div class="form-group">
+        
+        <label for='creneau'>Choisir un creneau :</label>
+        <select #creneau="ngModel" [(ngModel)]="docteur.Creneau" name="creneau" id="creneau "type="text" class="form-control" required>
+            <option *ngFor="let c of Creneaux" >
+                {{c.name}}
+
+            </option>
+        </select>
+        <div class="alert alert-danger" *ngIf="creneau.touched && creneau.invalid">Veuillez saisir un créneau disponible
+        </div>
+
+</div>
+    <button  mat-raised-button color="primary" class="btn btn-primary" (click)="close()">Confirmer le rendez vous</button>
+    
+    </form>
+    </div>
+    </div>
+    

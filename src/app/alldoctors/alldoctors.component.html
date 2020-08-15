@@ -1,0 +1,25 @@
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
+<br>
+
+<div class="row">
+  <div class="col-3">
+    <alldoctors-filter [speciality]="speciality"></alldoctors-filter>
+  </div>
+  <div class="col">
+    <div class="row">
+
+      <ng-container *ngFor="let d of filtredDoctors  index as i"> 
+          
+          <div class="col" >
+            <alldoctors-card [doctor]="d"></alldoctors-card>
+      </div>
+      <div *ngIf="(i+1)%2 ===0" class="w-100"></div>
+  
+  
+      </ng-container>
+  </div>    
+  </div>
+
+</div>
+
+

@@ -1,0 +1,17 @@
+<div class="sticky-top">
+<div class="list-group">
+    <a 
+    routerLink="/Alldoctors"
+    class="list-group-item list-group-item-action"
+    [class.active]="!speciality">
+        Toute les spécialités </a>
+    <a 
+    *ngFor="let s of specialities$ | async " 
+    routerLink="/Alldoctors"
+    [queryParams]="{ speciality: s.name }"
+    class="list-group-item list-group-item-action"
+    [class.active]="speciality === s.name">
+          {{ s.name}}
+    </a>
+  </div>
+  </div>
